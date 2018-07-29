@@ -5,15 +5,11 @@ import logging
 app = Flask(__name__)
 ask = Ask(app, "/ihome")
 emsg="I did not get that. Please repeat it once more"
-logging.basicConfig(filename='/home/jseelibala/mysite/logs/iHomeServer.log',format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+logging.basicConfig(filename='/home/<INSERT USERNAME>/mysite/logs/iHomeServer.log',format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 logging.info("iHomeServer Started")
 
 #Program Starts here
-@app.route("/send")
-def wservice():
-    ms = request.args.get("msg")
-    os.system("/home/jseelibala/.virtualenvs/myvirtualenv/bin/python3 /home/jseelibala/mysite/pubmsg.py "+ms)
-    return 'Published ' + ms
+
 
 @ask.launch
 def start_skill():
