@@ -1,2 +1,2 @@
 # iHome
-Programs for running iHome
+Some information and code for iHome
