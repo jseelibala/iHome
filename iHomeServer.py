@@ -2,13 +2,13 @@ from flask import Flask,request
 from flask_ask import Ask, statement, question, session
 import os
 import logging
-
 app = Flask(__name__)
 ask = Ask(app, "/ihome")
 emsg="I did not get that. Please repeat it once more"
 logging.basicConfig(filename='/home/jseelibala/mysite/logs/iHomeServer.log',format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 logging.info("iHomeServer Started")
 
+#Program Starts here
 @app.route("/send")
 def wservice():
     ms = request.args.get("msg")
